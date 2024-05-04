@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffbeb;
+}
+
+#select-box{
+  font-size: 1rem;
+}
+
+#select-box select{
+  font-size: 1rem;
+  padding: 3px;
+}
+
+#slideshow-container {
+  position: relative;
+  width: 800px;
+  height: 350px;
+  border: 3px solid #9ca3af;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+}
+
+#slideshow-container #slides {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+#slideshow-container #slides img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  transition: all 1.5s ease-in-out;
+}
+
+#slideshow-container #slides img:not(.active) {
+  top: 0;
+  left: -100%;
+}
+
+.buttons span#next-btn,
+span#prev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 14px;
+  color: #eee;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.5s;
+  border-radius: 3px;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+span#next-btn {
+  right: 3%;
+}
+
+span#prev-btn {
+  left: 3%;
+}
+
+span#next-btn:hover,
+span#prev-btn:hover {
+  background-color: #fff;
+  opacity: 0.8;
+  color: #000;
+}
+
+#dot-container {
+  position: absolute;
+  /* background: transparent; */
+  bottom: 5px;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#dot-container .dot {
+  width: 15px;
+  height: 15px;
+  margin: 0px 2px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+#dot-container .active {
+  background-color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (min-width: 320px) {
+  #slideshow-container {
+    width: 90%;
+    height: 200px;
+  }
+
+  #select-box select{
+    font-size: 1rem;
+    padding: 1px;
+  }
+
+  .buttons span#next-btn,
+  span#prev-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #dot-container .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0px 0.5px;
+    border: 2px solid #fff;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  #slideshow-container {
+    height: 220px;
+  }
+
+  .buttons span#next-btn,
+  span#prev-btn {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  #dot-container .dot {
+    margin: 0px 1px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #slideshow-container {
+    width: 90%;
+    height: 300px;
+  }
+
+  .buttons span#next-btn,
+  span#prev-btn {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  #dot-container .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0px 1.5px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #select-box{
+    font-size: 1.2rem;
+  }
+
+  #slideshow-container {
+    width: 800px;
+    height: 300px;
+  }
+
+  .buttons span#next-btn,
+  span#prev-btn {
+    padding: 14px;
+    font-size: 20px;
+  }
+
+  #dot-container .dot {
+    width: 13px;
+    height: 13px;
+    margin: 0px 2px;
+    border: 3px solid #fff;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #select-box{
+    font-size: 1.4rem;
+  }
+
+  #select-box select{
+    font-size: 1rem;
+    padding: 2px;
+  }
+
+  #slideshow-container {
+    width: 900px;
+    height: 350px;
+  }
+
+  .buttons span#next-btn,
+  span#prev-btn {
+    padding: 15px;
+    font-size: 22px;
+  }
+
+  #dot-container .dot {
+    width: 15px;
+    height: 15px;
+    margin: 0px 2.5px;
+    border: 3px solid #fff;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body {
+    gap: 30px;
+  }
+
+  #select-box{
+    font-size: 2rem;
+  }
+
+  #select-box select{
+    font-size: 1.4rem;
+    padding: 6px 6px 2px 6px;
+  }
+
+  #slideshow-container {
+    width: 1500px;
+    height: 600px;
+  }
+
+  .buttons span#next-btn,
+  span#prev-btn {
+    padding: 20px;
+    font-size: 30px;
+  }
+
+  #dot-container {
+    bottom: 15px;
+  }
+
+  #dot-container .dot {
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px;
+    border: 3px solid #fff;
+  }
+}
